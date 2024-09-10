@@ -16,13 +16,15 @@ public class MemberDAO {
         pstmt.setString(2, mpw);
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
+        MemberVO memberVO = null;
+
         rs.next();
-        MemberVO vo = MemberVO.builder()
+        memberVO = MemberVO.builder()
                 .mid(rs.getString("mid"))
                 .mpw(rs.getString("mpw"))
                 .mname(rs.getString("mname"))
                 .build();
 
-        return vo;
+        return memberVO;
     }
 }
