@@ -10,10 +10,8 @@ https://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <mvc:resources mapping="/resources/**" location="/resources/">
 
     </mvc:resources>
-
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/calc/"></property>
+        <property name="prefix" value="/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
-
 </beans>

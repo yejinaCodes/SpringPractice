@@ -6,20 +6,19 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
+
 
 @WebFilter(urlPatterns = {"/*"})
 @Log4j2
 public class UTF8Filter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        log.info("UTF-8 filter............");
+        log.info("UTF-8 filter ..............^^");
 
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        HttpServletResponse response = (HttpServletResponse) servletRequest;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
         request.setCharacterEncoding("UTF-8");
-
-        filterChain.doFilter(request, response);
+        filterChain.doFilter(request,response);
     }
 }
