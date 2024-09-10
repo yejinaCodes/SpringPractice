@@ -22,6 +22,7 @@ public class MemberDAO {
                 .mpw(rs.getString("mpw"))
                 .mname(rs.getString("mname"))
                 .build();
+
         return vo;
     }
 }
